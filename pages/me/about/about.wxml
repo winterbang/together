@@ -1,0 +1,22 @@
+<view>
+  <view class="group">
+    <navigator url="about/about" class="wrap item">
+      <text class="label">服务协议</text>
+      <view class="arrow">
+        <text class="fa fa-angle-right fa-lg"></text>
+      </view>
+    </navigator>
+    <navigator url="about/about" class="wrap item">
+      <text class="label">官方客服</text>
+      <view class="arrow">
+        <text class="fa fa-angle-right fa-lg"></text>
+      </view>
+    </navigator>
+  </view>
+  <navigator url="about/about" class="wrap item">
+    <text class="label">意见反馈</text>
+    <view class="arrow">
+      <text class="fa fa-angle-right fa-lg"></text>
+    </view>
+  </navigator>
+</view>

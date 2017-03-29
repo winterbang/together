@@ -27,15 +27,22 @@
     </view>
   </view>
 
-  <view class="wrap normal item">
-    <text class="fa fa-cogs fa-lg label">设置</text>
+  <navigator url="feedback/feedback" class="wrap normal">
+    <text class="fa fa-commenting fa-lg label">意见反馈</text>
     <view class="arrow">
       <text class="fa fa-angle-right fa-lg"></text>
     </view>
-  </view>
+  </navigator>
 
-  <view class="wrap normal">
+  <navigator url="about/about" class="wrap normal">
     <text class="fa fa-users fa-lg label">关于我们</text>
+    <view class="arrow">
+      <text class="fa fa-angle-right fa-lg"></text>
+    </view>
+  </navigator>
+
+  <view class="wrap normal item">
+    <text class="fa fa-cogs fa-lg label">设置</text>
     <view class="arrow">
       <text class="fa fa-angle-right fa-lg"></text>
     </view>

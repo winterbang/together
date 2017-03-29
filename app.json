@@ -1,9 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/journey/journey",
     "pages/logs/logs",
     "pages/publish/publish",
-    "pages/me/me"
+    "pages/me/me",
+    "pages/me/feedback/feedback",
+    "pages/me/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,7 +17,7 @@
     "borderStyle": "black",
     "selectedColor": "#3BAFDA",
     "list": [{
-      "pagePath": "pages/index/index",
+      "pagePath": "pages/journey/journey",
       "text": "行程",
       "iconPath": "images/route.png",
       "selectedIconPath": "images/route_a.png"

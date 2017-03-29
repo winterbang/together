@@ -1,0 +1,3 @@
+<view>
+  <textarea bindblur="bindTextAreaBlur" auto-height placeholder="自动变高" />
+</view>
