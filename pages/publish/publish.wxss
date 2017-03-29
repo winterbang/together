@@ -1,1 +1,73 @@
 /* pages/publish/publish.wxss */
+.section {
+  display: flex;
+  flex-direction: column;
+  background: #F5F7FA;
+  padding: 0 20px;
+  color: #AAB2BD;
+  font-size: 26rpx;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80rpx;
+}
+
+.section:not(:first-child) {
+  margin-top: 10px;
+}
+
+.section .item:not(:last-child) {
+  border-bottom: 1px solid #E6E9ED;
+}
+
+.form-inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fa {
+  margin-left: 10rpx;
+}
+
+
+.fa.blue {
+  color: #4FC1E9;
+  font-size: 24rpx;
+}
+
+.fa-red:before {
+  margin-right: 10rpx;
+  color: #DA4453;
+  font-size: 32rpx;
+}
+
+.blue::before {
+  margin-right: 10rpx;
+}
+
+.message {
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 10px 20px 0;
+  font-size: 22rpx;
+  color: #CCD1D9;
+}
+
+.label-top {
+  margin: 20rpx 0;
+}
+
+.label {
+  color: #434A54;
+  font-size: 26rpx;
+  margin-right: 10rpx;
+}
+
+.btn {
+  margin: 40rpx 0;
+}

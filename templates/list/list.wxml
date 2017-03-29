@@ -1,0 +1,14 @@
+<!--
+  label: string,
+  class: string
+-->
+<template name="list">
+
+  <view class="wrap item">
+    <text class="fa fa-star fa-lg label">{{label}}</text>
+    <view class="arrow">
+      <text class="fa fa-angle-right fa-lg"></text>
+    </view>
+  </view>
+
+</template>
