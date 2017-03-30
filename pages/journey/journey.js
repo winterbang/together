@@ -1,14 +1,30 @@
 //index.js
 //获取应用实例
 var { pinyinUtil } = require('../../lib/pinyin/pinyin.js')
-// var pinyin = new Pinyin();
-console.log(pinyinUtil.getPinyin('小茗同学'))
 var app = getApp()
+var fontFamily = [
+   'Macondo',
+   'Spirax',
+   'Revalia',
+   'Indie Flower',
+   'Nova Oval',
+   'Abril Fatface',
+   'Gloria Hallelujah',
+   'Amatic SC',
+   'Shadows Into Light',
+   'Dancing Script',
+   'Fascinate Inline',
+   'Kaushan Script',
+   'Permanent Marker',
+   'Coming Soon',
+   'Tangerine'
+]
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
-    // destination: pinyin('马尼拉')
+    destination: pinyinUtil.getPinyin('马尼拉'),
+    fontFamily: fontFamily
   },
   //事件处理函数
   bindViewTap: function() {
@@ -20,8 +36,6 @@ Page({
     wx.setNavigationBarTitle({
       title: '行程'
     })
-    // console.log(pinyin)
-    console.log('==========')
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){

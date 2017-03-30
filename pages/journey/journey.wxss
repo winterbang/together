@@ -3,9 +3,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background: #F5F7FA;
+  background: #FFCE54;
   color: #AAB2BD;
+  margin-bottom: 40rpx;
+  border-radius: 10rpx 10rpx 10rpx;
 }
+
+
 
 .hd-bg {
   position: absolute;
@@ -24,13 +28,15 @@
   flex-direction: row;
   background-color: rgba(101,61,120, 0.5);
   z-index: 2;
+  padding: 20rpx 40rpx;
+  border-radius: 10rpx 10rpx 10rpx;
 }
 
 .header .hd-left {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20rpx 40rpx;
+  margin-right: 40rpx;
 }
 
 .userinfo-avatar {
@@ -40,11 +46,12 @@
 .userinfo-nickname {
   height: 32rpx;
   font-size: 28rpx;
+  color: #656D78;
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
+  width: 88rpx;
+  height: 88rpx;
   border-radius: 50%;
 }
 
@@ -63,9 +70,50 @@
 }
 
 .hd-right {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   color: #000;
 }
 
 .title {
   color: #000;
+  font-size: 36rpx;
 }
+
+.sub-title {
+  font-size: 32rpx;
+}
+
+.hd-r {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 32rpx;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height:80rpx;
+  padding: 0 40rpx;
+  font-size: 32rpx;
+}
+
+.bottom .lf {
+  flex-grow: 1;
+}
+
+/*.action {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.action .fa {
+  flex-grow: 1;
+  text-align: center;
+}*/
