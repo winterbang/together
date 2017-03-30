@@ -1,8 +1,8 @@
 //index.js
 //获取应用实例
-// var pinyin = require('../../lib/pinyin/web-pinyin.js')
+var { pinyinUtil } = require('../../lib/pinyin/pinyin.js')
 // var pinyin = new Pinyin();
-// console.log(pinyin)
+console.log(pinyinUtil.getPinyin('小茗同学'))
 var app = getApp()
 Page({
   data: {
