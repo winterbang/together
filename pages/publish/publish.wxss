@@ -68,6 +68,16 @@
   margin-right: 10rpx;
 }
 
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-betwen;
+  margin: 40rpx auto;
+}
+
 .btn {
-  margin: 40rpx 0;
+  margin: 0 20rpx;
+}
+.btn:first-child {
+  flex-grow: 1;
 }

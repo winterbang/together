@@ -3,11 +3,15 @@
 var app = getApp()
 Page({
   data: {
+    title: "",
     departurePlace: "",
     startData: '出发时间',
     destination: "",
     endData: '离开时间',
     byWayOf: [],
+    peopleLimit:[],
+    contactWay: {},
+    desc: "",
     userInfo: {},
     config: [{
       label: '目的地'
@@ -42,6 +46,18 @@ Page({
   bindEndData: function(e) {
     this.setData({
       endData: e.detail.value
+    })
+  },
+  bindLimitPeople: function(e) {
+    var that = this;
+    wx.showActionSheet({
+      itemList: ['1人', '2-5人', '6-10人', '不限'],
+      success: function(res) {
+        console.log(res.tapIndex)
+      },
+      fail: function(res) {
+        console.log(res.errMsg)
+      }
     })
   },
   addLocation: function(e) {

@@ -1,10 +1,31 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="card">
+    <view class="hd-bg">
+      <text>我是背景{{destination}}</text>
+    </view>
+    <view class="header">
+      <view class="hd-left">
+        <view class="avatar">
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+          <text class="fa fa-mars fa-border"></text>
+        </view>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+      <view class="hd-right">
+        <text>谁和我一起去薄荷岛？</text>
+      </view>
+    </view>
+
+    <view>
+      <text class="fa fa-map-marker">北京</text>
+      <text>..上海</text>
+      <text>..马尼拉..</text>
+      <text class="fa fa-plane">薄荷岛</text>
+    </view>
+    <view>
+      <text class="fa fa-calendar-plus-o">2017.06.01-2017.06.15</text>
+    </view>
+
   </view>
 </view>

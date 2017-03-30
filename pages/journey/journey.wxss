@@ -1,21 +1,71 @@
 /**index.wxss**/
-.userinfo {
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #F5F7FA;
+  color: #AAB2BD;
+}
+
+.hd-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(101,61,120, 0.5);
+  z-index: 2;
+}
+
+.header .hd-left {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20rpx 40rpx;
+}
+
+.userinfo-avatar {
+  border: 2px solid #FFFFFF;
+}
+
+.userinfo-nickname {
+  height: 32rpx;
+  font-size: 28rpx;
 }
 
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 20rpx;
   border-radius: 50%;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.header .hd-left .avatar {
+  position: relative;
 }
 
-.usermotto {
-  margin-top: 200px;
+.avatar .fa {
+  position: absolute;
+  bottom: 5rpx;
+  right: 12rpx;
+  color: #48CFAD;
+  background-color: #5D9CEC;
+  border-radius: 50%;
+  font-size: 28rpx;
+}
+
+.hd-right {
+  color: #000;
+}
+
+.title {
+  color: #000;
 }

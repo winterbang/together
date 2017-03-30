@@ -39,20 +39,6 @@
   justify-content: space-around;
 }
 
-.userinfo-nickname {
-  color: #4FC1E9;
-}
-
-.user-motto {
-  color: #3BAFDA;
-  font-size: 14px;
-}
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
 .arrow {
   flex-grow: 1;
   display: flex;
