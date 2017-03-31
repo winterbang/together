@@ -25,10 +25,14 @@
     <view class="bottom">
       <view class="lf">
         <text class="fa fa-map-marker">北京</text>
-        <text>..上海</text>
+        <text class="way">..上海</text>
         <text>..马尼拉..</text>
       </view>
-      <text class="fa fa-ellipsis-v"></text>
+      <view class="action">
+        <text class="fa fa-star"></text>
+        <text class="fa fa-ellipsis-v"></text>
+      </view>
+
     </view>
     <view class="action" hidden="true">
       <text class="fa fa-share"></text>

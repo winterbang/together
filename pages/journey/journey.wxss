@@ -1,12 +1,16 @@
 /**index.wxss**/
+.container {
+  background-color: #F5F7FA;
+}
+
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: #FFCE54;
+  background: #FFF;
   color: #AAB2BD;
-  margin-bottom: 40rpx;
-  border-radius: 10rpx 10rpx 10rpx;
+  margin-bottom: 10rpx;
+  /*border-radius: 10rpx 10rpx 10rpx;*/
 }
 
 
@@ -26,10 +30,10 @@
 .header {
   display: flex;
   flex-direction: row;
-  background-color: rgba(101,61,120, 0.5);
+  background-color: rgba(246,187,66, 0.5);
   z-index: 2;
   padding: 20rpx 40rpx;
-  border-radius: 10rpx 10rpx 10rpx;
+  /*border-radius: 10rpx 10rpx 10rpx;*/
 }
 
 .header .hd-left {
@@ -83,14 +87,21 @@
 }
 
 .sub-title {
+  color: #656D78;
   font-size: 32rpx;
 }
 
 .hd-r {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   font-size: 32rpx;
+  text-align: right;
+  color: #656D78;
+}
+
+.hd-r .fa::before {
+  font-size: 28rpx;
 }
 
 .bottom {
@@ -100,20 +111,17 @@
   height:80rpx;
   padding: 0 40rpx;
   font-size: 32rpx;
+  color: #656D78;
 }
 
 .bottom .lf {
   flex-grow: 1;
 }
 
-/*.action {
+.action {
+  width: 80rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-
-.action .fa {
-  flex-grow: 1;
-  text-align: center;
-}*/
