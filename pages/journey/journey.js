@@ -19,12 +19,15 @@ var fontFamily = [
    'Coming Soon',
    'Tangerine'
 ]
+
+var colors = ['#FFCE54', '#48CFAD', '#F6BB42', '#8CC152', '#37BC9B', '#DA4453']
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     destination: pinyinUtil.getPinyin('马尼拉'),
-    fontFamily: fontFamily
+    fontFamily: fontFamily,
+    colors: colors
   },
   //事件处理函数
   bindViewTap: function() {
@@ -57,5 +60,14 @@ Page({
         // 分享失败
       }
     }
+  },
+  bindShow(e) {
+    console.log('show...')
+  },
+  bindMore: function(e) {
+    console.log('click more...')
+  },
+  bindStar: function(e) {
+    console.log('click start')
   }
 })

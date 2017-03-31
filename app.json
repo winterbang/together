@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/journey/journey",
+    "pages/journey/show/show",
     "pages/logs/logs",
     "pages/publish/publish",
     "pages/me/me",

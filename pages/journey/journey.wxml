@@ -1,24 +1,28 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="card" wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}}">
-    <view class="hd-bg">
-      <text class="fa fa-map"> {{destination}}</text>
-    </view>
+  <navigator url="show/show" class="card" wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}}">
     <view class="header">
-      <view class="hd-left">
-        <view class="avatar">
-          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-          <text class="fa fa-mars fa-border"></text>
+      <view class="hd-bg" style="background-color: {{colors[item % 4]}}">
+        <text class="fa fa-map" style="transform: rotate(9deg);"> {{destination}}</text>
+        <text class="fa fa-map" style="transform: rotate(-15deg);"> {{destination}}</text>
+        <text class="fa fa-map" style="transform: rotate(30deg);"> {{destination}}</text>
+      </view>
+      <view class="hd-container">
+        <view url="/pages/me/me" class="hd-left">
+          <view class="avatar">
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+            <text class="fa fa-mars fa-border"></text>
+          </view>
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
         </view>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </view>
-      <view class="hd-right">
-        <text class="title">谁和我一起去薄荷岛？</text>
-        <text class="fa fa-plane sub-title">  马尼拉</text>
-      </view>
-      <view class="hd-r">
-        <text>06.13</text>
-        <text class="fa fa-users">  3-5人</text>
+        <view class="hd-right">
+          <text class="title">谁和我一起去薄荷岛？</text>
+          <text class="fa fa-plane sub-title">  马尼拉</text>
+        </view>
+        <view class="hd-r">
+          <text>06.13</text>
+          <text class="fa fa-users">  3-5人</text>
+        </view>
       </view>
     </view>
 
@@ -29,16 +33,15 @@
         <text>..马尼拉..</text>
       </view>
       <view class="action">
-        <text class="fa fa-star"></text>
-        <text class="fa fa-ellipsis-v"></text>
+        <text class="fa fa-star fa-yellow" catchtap="bindStar"></text>
+        <text class="fa fa-ellipsis-v" catchtap="bindMore"></text>
       </view>
-
     </view>
+
     <view class="action" hidden="true">
       <text class="fa fa-share"></text>
       <text class="fa fa-star"></text>
       <text class="fa fa-eye"></text>
     </view>
-
-  </view>
+  </navigator>
 </view>
