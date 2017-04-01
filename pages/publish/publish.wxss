@@ -30,6 +30,12 @@
   align-items: center;
 }
 
+.input-txt-r {
+  flex-grow: 1;
+  text-align: right;
+}
+
+
 .fa {
   margin-left: 10rpx;
 }

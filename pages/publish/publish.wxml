@@ -3,7 +3,7 @@
   <view class="section">
     <view class="item" bindtap="">
       <view class="form-inline">
-        <textarea bindblur="bindTextAreaBlur" auto-height placeholder=":）一句话开始一段美丽的邂逅" />
+        <textarea bindconfirm="getData" bindblur="getData" data-key="title" auto-height placeholder=":）一句话开始一段美丽的邂逅" />
       </view>
     </view>
   </view>
@@ -12,7 +12,7 @@
     <view class="item">
       <view class="form-inline">
         <text class="label">出发地</text>
-        <input />
+        <input bindconfirm="getData" bindblur="getData" data-key="departurePlace"/>
       </view>
       <picker mode="date" value="{{startData}}" start="2015-09-01" end="2017-09-01" bindchange="bindStartData">
         <view class="picker">
@@ -23,7 +23,7 @@
     <view class="item">
       <view class="form-inline">
         <text class="label">目的地</text>
-        <input />
+        <input bindconfirm="getData" bindblur="getData" data-key="destination"/>
       </view>
       <picker mode="date" value="{{endData}}" start="2015-09-01" end="2017-09-01" bindchange="bindEndData">
         <view class="picker">
@@ -61,14 +61,15 @@
   </view>
 
   <view class="section">
-    <view class="item" wx:for="{{byWayOf}}" wx:for-item="bwo">
+    <view class="item" wx:for="{{contactWays}}" wx:for-item="cw">
       <view class="form-inline">
-        <text class="fa fa-minus-circle fa-red" bindtap="removeLocation" data-id="{{index}}"></text>
-        <input placeholder="选择联系方式" placeholder-class="label" value="{{bwo.location}}"/>
+        <text class="fa fa-minus-circle fa-red" bindtap="removeContactWay" data-id="{{index}}"></text>
+        <text class="label" bindtap="choiceContactType" data-id="{{index}}">{{cw.type == "" ? "选择联系方式" : cw.type}}</text>
       </view>
+      <input bindconfirm="getData" bindblur="getData" data-key="contactWays.{{index}}.value" placeholder="输入联系方式" class="input-txt-r" value="{{cw.value}}" focus="{{cw.type != ''&& cw.value == ''}}" hidden="{{cw.type == ''}}"/>
     </view>
     <view class="item">
-      <text class="fa fa-plus-circle blue" bindtap="addLocation">添加联系方式</text>
+      <text class="fa fa-plus-circle blue" bindtap="addContactWay">添加联系方式</text>
     </view>
   </view>
   <view class="message warning">
@@ -78,7 +79,7 @@
     <view class="label-top">
       <text class="label">结伴前言</text>
     </view>
-    <textarea name="textarea"/>
+    <textarea bindconfirm="getData" bindblur="getData" data-key="desc" name="textarea"/>
   </view>
   <view class="btn-group">
     <button type="primary" size="default" bindtap="publish" class="btn"> 发布 </button>
