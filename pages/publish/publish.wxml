@@ -1,5 +1,4 @@
 <!--index.wxml-->
-<import src="../../templates/list/list.wxml"/>
 <view class="publish-wrap">
   <view class="section">
     <view class="item" bindtap="">
@@ -82,7 +81,7 @@
     <textarea name="textarea"/>
   </view>
   <view class="btn-group">
-    <button type="primary" size="default" bindtap="primary" class="btn"> 发布 </button>
+    <button type="primary" size="default" bindtap="publish" class="btn"> 发布 </button>
     <button type="default" size="default" bindtap="primary" class="btn btn-blue"> 预览 </button>
   </view>
 

@@ -2,6 +2,7 @@
 //获取应用实例
 var { pinyinUtil } = require('../../lib/pinyin/pinyin.js')
 var app = getApp()
+var api = app.API()
 var fontFamily = [
    'Macondo',
    'Spirax',
@@ -39,6 +40,11 @@ Page({
     wx.setNavigationBarTitle({
       title: '行程'
     })
+    let journeys=[]
+    api.sync().limitToFirst(10).ref('journeys').on('child_added',function(snapshot,prev){
+      journeys.push(snapshot.val())
+    });
+    // console.log(journeys.limitToFirst(10), 'journeys')
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){

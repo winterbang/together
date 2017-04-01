@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 var app = getApp()
+var api = app.API()
 Page({
   data: {
     title: "",
@@ -9,7 +10,7 @@ Page({
     destination: "",
     endData: '离开时间',
     byWayOf: [],
-    peopleLimit:[],
+    peopleLimit:[1, 2],
     contactWay: {},
     desc: "",
     userInfo: {},
@@ -29,6 +30,17 @@ Page({
     wx.setNavigationBarTitle({
       title: '发布'
     })
+    console.log(api.auth().currentUser.uid)
+    let wilddog = app.API()
+    console.log(wilddog.sync(), '==========api.sync=========')
+    var sessionsRef = wilddog.sync().ref("sessions");
+    var mySessionRef = sessionsRef.push();
+    mySessionRef.onDisconnect().update({
+        'endedAt': wilddog.sync().ServerValue.TIMESTAMP
+    });
+    mySessionRef.update({
+        'startedAt': wilddog.sync().ServerValue.TIMESTAMP
+    });
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
@@ -75,6 +87,24 @@ Page({
     this.setData({
       byWayOf: locations
     })
-  }
-
+  },
+  publish: function() {
+    const {title, departurePlace, startData, destination, endData, byWayOf, peopleLimit, contactWay, desc} = this.data
+    let uid = api.auth().currentUser.uid
+    let journey = {uid, title, departurePlace, startData, destination, endData, byWayOf, peopleLimit, contactWay, desc}
+    api.sync().ref("journeys").push(journey)
+      .then(function(newRef){
+         // newRef 的地址类似下面：
+         // https://<appId>.wilddogio.com/city/-JmRhjbYk73IFRZ7
+         console.info(newRef.toString());
+         console.info(newRef.key());
+        //  api.sync().ref(`userinfo/${uid}/journeys`).on('child_added',function(snapshot,prev){
+        //    journeys.push(snapshot.val())
+        //  });
+         api.sync().ref(`userinfo/${uid}/journeys/0`).set(newRef.key())
+      })
+      .catch(function(err){
+         console.info('remove node failed', err.code, err);
+      });
+    }
 })
