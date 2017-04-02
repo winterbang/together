@@ -96,13 +96,13 @@ Page({
   },
   choiceContactType: function(e) {
     var that = this;
-    var items = {qq: 'QQ', wechat: '微信', phoneNumber: '手机号'}
+    var itemKeys = ['qq', 'wechat', 'phoneNumber']
     var targetId = e.target.dataset.id;
     var contactWays = this.data.contactWays;
     wx.showActionSheet({
-      itemList: Object.values(items),
+      itemList: ['QQ', '微信', '手机号'],
       success: function(res) {
-        contactWays[targetId].type = Object.keys(items)[res.tapIndex]
+        contactWays[targetId].type = itemKeys[res.tapIndex]
         that.setData({
           contactWays: contactWays
         })
@@ -148,11 +148,16 @@ Page({
          console.info(newRef.toString());
          console.info(newRef.key());
          let lastJourneyId
+         console.log(uid, 'uid')
          api.sync().ref(`userinfo/${uid}/journeys`)
-          .limitToLast(10).on('child_added',function(snapshot,prev){
-           lastJourneyId = snapshot.key()
+            .limitToLast(1).on('child_added',function(snapshot,prev){
+              console.log(snapshot.val())
+              console.log(snapshot.parent())
+              console.log("the previous key is",prev)
+              console.log(snapshot.key(), 'snapshot.key()')
+              lastJourneyId = snapshot.key()
          });
-         api.sync().ref(`userinfo/${uid}/journeys/${lastJourneyId+1}`).set(newRef.key())
+        //  api.sync().ref(`userinfo/${uid}/journeys/${lastJourneyId+1}`).set(newRef.key())
       })
       .catch(function(err){
          console.info('remove node failed', err.code, err);

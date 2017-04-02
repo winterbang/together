@@ -4,6 +4,33 @@
   background-color: #F5F7FA;
 }
 
+.more-actions {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.more-actions::after {
+  position: absolute;
+  bottom: -40rpx;
+  right: 25rpx;
+  content: "";
+  border: 10px solid transparent;
+  border-top-color: #FFF;
+  width: 0;
+  height: 0;
+}
+.more-actions .action{
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-left: 30rpx;
+  border-bottom: 1px solid #E6E9ED;
+}
+
+.more-actions .action:last-child {
+  border-bottom: none;
+}
+
 .card {
   position: relative;
   display: flex;
@@ -126,15 +153,19 @@
   flex-grow: 1;
 }
 
-.action {
+.actions {
   width: 80rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-
-.action .fa-yellow {
+.actions .fa{
+  width: 44rpx;
+  text-align: right;
   font-size: 44rpx;
+}
+
+.actions .fa-yellow {
   color: #FFCE54;
 }

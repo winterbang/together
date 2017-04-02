@@ -28,7 +28,8 @@ Page({
     userInfo: {},
     destination: pinyinUtil.getPinyin('马尼拉'),
     fontFamily: fontFamily,
-    colors: colors
+    colors: colors,
+    showMask: false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -41,10 +42,10 @@ Page({
       title: '行程'
     })
     let journeys=[]
-    api.sync().limitToFirst(10).ref('journeys').on('child_added',function(snapshot,prev){
+    api.sync().ref('journeys').limitToFirst(10).on('child_added',function(snapshot,prev){
       journeys.push(snapshot.val())
     });
-    // console.log(journeys.limitToFirst(10), 'journeys')
+    console.log(journeys)
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
@@ -71,9 +72,36 @@ Page({
     console.log('show...')
   },
   bindMore: function(e) {
+    console.log(e)
+    this.setData({
+      showMask: true,
+      left: e.touches[0].pageX,
+      top: e.touches[0].pageY-98,
+    })
     console.log('click more...')
+    // wx.showModal({
+    //   title: '提示',
+    //   content: '这是一个模态弹窗',
+    //   success: function(res) {
+    //     if (res.confirm) {
+    //       console.log('用户点击确定')
+    //     } else if (res.cancel) {
+    //       console.log('用户点击取消')
+    //     }
+    //   }
+    // })
   },
   bindStar: function(e) {
     console.log('click start')
+  },
+  hideMask: function(e) {
+    console.log(e)
+    this.setData({
+      showMask: false,
+    })
+  },
+  bindScroll: function(e) {
+    console.log(e, 'bindScroll')
+    this.hideMask(e)
   }
 })
